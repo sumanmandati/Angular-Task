@@ -1,0 +1,13 @@
+<div class="page-wrap">
+    <app-header></app-header>
+    <div class="admin-wrapper">
+        <div class="admin-aside-left lightScroll" malihu-scrollbar [scrollbarOptions]="Verticalscrollbar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="admin-content-wrapper">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+<div class="m-aside-left-overlay" (click)="overlayHide();"></div>

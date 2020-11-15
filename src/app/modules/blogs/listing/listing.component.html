@@ -1,0 +1,26 @@
+<div class="row blogs mt-2 ml-5">
+    <div class="col-md-8">
+        <h3>All Blogs</h3>
+    </div>
+    <div class="col-md-4">
+        <input class="search" type="text" placeholder="Filter Here..." [(ngModel)]="searchedKeyword" tabindex="-1"
+            data-search="template-search">
+    </div>
+</div>
+<div class="blog">
+    <div class="container">
+        <ul *ngFor="let data of allBlogs | filter: searchedKeyword;  let i = index">
+            <div class="blog-image">
+                <a [routerLink]="['/blogs',data.id]"><img src="assets/images/noImageAvailable.png" height=200px
+                        width=200px></a>
+            </div>
+            <a [routerLink]="['/blogs',data.id]">
+                <h3>{{i+1}} : {{data.title}}</h3>
+            </a>
+            <p>Body: {{data.body}}</p>
+        </ul>
+    </div>
+</div>
+
+<p class="no-blogs" *ngIf="(allBlogs.length && !(allBlogs | filter : searchedKeyword).length)">No Blogs
+    found!</p>

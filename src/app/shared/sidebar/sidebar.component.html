@@ -1,0 +1,39 @@
+<nav class="nav" role="navigation">
+  <div class="header-brand">
+    <div class="header-brand-inner">
+      <a class="brand-logo" href="javascript:;">
+        <img src="assets/images/VS.jpeg" class="header-logo" alt="no-image" title="Varadhi Smartek" />
+      </a>
+      <div class="brand-tools">
+      </div>
+    </div>
+  </div>
+  <div class="text-center user-profile">
+    <div class="thumb-img">
+      <img src='/assets/images/NoProfile.png' alt="no img" />
+    </div>
+    <span>
+      {{userName}}
+    </span>
+  </div>
+  <ul class="sidebar nav__list">
+    <li routerLinkActive='active'>
+      <a class="nav-link" [routerLink]="[URLConstants.HOME]" href="javascript:;">
+        <span class="nav-link-icon fa fa-tachometer"></span>
+        <span class="nav-link-text">Home</span>
+      </a>
+    </li>
+    <li routerLinkActive='active'>
+      <a class="nav-link" [routerLink]="[URLConstants.USERS]" href="javascript:;">
+        <span class="nav-link-icon fa fa-tachometer"></span>
+        <span class="nav-link-text">Users</span>
+      </a>
+    </li>
+    <li routerLinkActive='active'>
+      <a class="nav-link" [routerLink]="[URLConstants.BLOGS]" href="javascript:;">
+        <span class="nav-link-icon fa fa-tachometer"></span>
+        <span class="nav-link-text">Blogs</span>
+      </a>
+    </li>
+  </ul>
+</nav>

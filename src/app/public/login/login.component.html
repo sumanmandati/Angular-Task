@@ -1,0 +1,51 @@
+<div class="authentic-page">
+    <div class="authentic-wrapper">
+        <div class="row">
+            <div class="col-md-6 p-0 login-logo">
+                <img src="assets/images/login.png" class="header-logo" alt="no-image" />
+            </div>
+            <div class="col-md-6 p-0">
+                <div class="login-container">
+                    <div class="login-section">
+                        <h3 class="pb-2">Sign in to your account</h3>
+                        <form class="example-form" #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)"
+                            autocomplete="off">
+                            <div class='form-group row'>
+                                <label htmlFor="Email">Email:</label>
+                                <div class="col-md-12"
+                                    [ngClass]="((submitted || emailId.touched) && emailId.invalid)?'has-danger':''">
+                                    <input class="form-control" placeholder="Email" type="emailId" name="emailId"
+                                        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" autocomplete="on"
+                                        [(ngModel)]="user.emailId" value="" id="emailId" required #emailId="ngModel" />
+                                    <em class='fa fa-user' aria-hidden='true'></em>
+                                    <div class="error-block text-left"
+                                        *ngIf="((submitted || emailId.touched) && emailId.invalid)">
+                                        {{showErrorService.showError('emailId', emailId.errors)}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='form-group row'>
+                                <label htmlFor="Password">Password:</label>
+                                <div class="col-md-12"
+                                    [ngClass]="((submitted || password.touched) && password.invalid)?'has-danger':''">
+                                    <input class="form-control" placeholder="Password" type="{{passtype}}"
+                                        name="password" [(ngModel)]="user.password"  value="" autocomplete="on"
+                                        id="password" required #password="ngModel" />
+                                    <em class="iconright" [ngClass]=" this.show? 'fa fa-eye' : 'fa fa-eye-slash' "
+                                        (click)="showpass()"></em>
+                                    <div class="error-block text-left"
+                                        *ngIf="((submitted || password.touched) && password.invalid)">
+                                        {{showErrorService.showError('password', password.errors)}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='mt-5'>
+                                <button class='btn btn-block btn-primary' type='submit'> Login </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

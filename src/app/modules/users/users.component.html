@@ -1,0 +1,38 @@
+<div class="row users mt-2 ml-5">
+    <div class="col-md-8">
+        <h3>All Users</h3>
+    </div>
+    <div class="col-md-4">
+        <input class="search" type="text" placeholder="Filter Here..." [(ngModel)]="searchedKeyword" tabindex="-1"
+            data-search="template-search">
+    </div>
+</div>
+<table class="table table-striped mt-3 ml-5">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">phone</th>
+            <th scope="col">website</th>
+            <th scope="col">username</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of allUsers | filter: searchedKeyword">
+            <td>{{user.name ? user.name : '--'}}</td>
+            <td>{{user.email ? user.email : '--'}}</td>
+            <td>{{user.phone ? user.phone : '--'}}</td>
+            <td>{{user.website ? user.website : '--'}}</td>
+            <td>{{user.username ? user.username : '--'}}</td>
+
+        </tr>
+    </tbody>
+
+</table>
+
+<div *ngIf="allUsers.length && !(allUsers | filter : searchedKeyword).length">
+    <p class="no-users"> No Users found!</p>
+</div>
+<!-- <div class="no-records" *ngIf="!transactionList?.length">
+    <p class="no-trade-history">No Data Found</p>
+</div> -->

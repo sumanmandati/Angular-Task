@@ -1,0 +1,30 @@
+<header class="header">
+  <div class="header-stack">
+    <div class="header-right">
+      <div class="header-menu">
+        <h3>Suman Mandati</h3>
+      </div>
+
+      <div class="header-topbar">
+        <ul class="topbar-nav">
+          <li class="profile-dropdown">
+            <a class="dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+              <span class="user-info">
+                <span class="user-name">
+                  {{userName}}
+                </span>
+              </span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right p-0 profile-menu" aria-labelledby="profileDropdown">
+
+              <div class="dropdown-divider mt-2 mb-0"></div>
+              <a class="dropdown-item logout" href="javascript:;" (click)='logoutService.logout()'>
+                <span class="fa fa-power-off"></span><span>Logout</span>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
